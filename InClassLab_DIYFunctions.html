@@ -373,7 +373,9 @@ an argument and returns the Celsius equivalent.</li>
 fahrenheit_to_celsius &lt;- function(fahrenheit) {
   celsius &lt;- (fahrenheit - 32) * 5/9
   return(celsius)
-}</code></pre>
+}
+fahrenheit_to_celsius(212)</code></pre>
+<pre><code>## [1] 100</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Expand that function so that it takes a temperature in Fahrenheit
 and a distance in feet and returns <strong>both</strong> the temperature
@@ -385,7 +387,9 @@ convert_temp_and_distance &lt;- function(fahrenheit, feet) {
   celsius &lt;- (fahrenheit - 32) * 5/9
   meters &lt;- feet * 0.3048
   return(c(celsius, meters))
-}</code></pre>
+}
+convert_temp_and_distance(212,100)</code></pre>
+<pre><code>## [1] 100.00  30.48</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Write a function that prints out a statement of whether the number
 passed as an argument is positive, negative or 0.</li>
@@ -399,7 +403,9 @@ check_number &lt;- function(number) {
   } else {
     print(&quot;The number is zero.&quot;)
   }
-}</code></pre>
+}
+check_number(5)</code></pre>
+<pre><code>## [1] &quot;The number is positive.&quot;</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Write a function that returns the absolute value of the number
 passed as an argument.
@@ -414,7 +420,9 @@ my_abs &lt;- function(number) {
     number &lt;- number * -1
   }
   return(number)
-}</code></pre>
+}
+my_abs(-7)</code></pre>
+<pre><code>## [1] 7</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Hard mode: add an error check to that function that prints out the
 string “Please pass a numerical value to this function” if the user
@@ -435,7 +443,9 @@ my_abs_with_check &lt;- function(number) {
     }
     return(number)
   }
-}</code></pre>
+}
+my_abs_with_check(!15)</code></pre>
+<pre><code>## [1] &quot;Please pass a numerical value to this function&quot;</code></pre>
 <p>```</p>
 </div>
 
