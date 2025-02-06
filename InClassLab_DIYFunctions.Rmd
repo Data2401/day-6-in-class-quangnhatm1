@@ -1,6 +1,6 @@
 ---
 title: "In Class Lab - DIY Functions"
-author: "Dr. Shoemaker"
+author: "Quang Le"
 date: "DATA 2401"
 output: html_document
 ---
@@ -13,10 +13,14 @@ knitr::opts_chunk$set(echo = TRUE)
 ## In Class Activity 
 The questions from your notes today are below, please copy your answers them here! Then complete the two new tasks, and attempt the "hard mode" if you have time. 
 
-1. Write your own function that takes the temperature in Fahrenheit as an argument and returns the Celcius equivalent. 
+1. Write your own function that takes the temperature in Fahrenheit as an argument and returns the Celsius equivalent. 
 
 ```{R}
-
+# Function to convert Fahrenheit to Celsius
+fahrenheit_to_celsius <- function(fahrenheit) {
+  celsius <- (fahrenheit - 32) * 5/9
+  return(celsius)
+}
 
 ```
 
@@ -24,6 +28,12 @@ The questions from your notes today are below, please copy your answers them her
 
 
 ```{r}
+# Expanded function to convert Fahrenheit to Celsius and feet to meters
+convert_temp_and_distance <- function(fahrenheit, feet) {
+  celsius <- (fahrenheit - 32) * 5/9
+  meters <- feet * 0.3048
+  return(c(celsius, meters))
+}
 
 
 ```
@@ -32,6 +42,16 @@ The questions from your notes today are below, please copy your answers them her
 3. Write a function that prints out a statement of whether the number passed as an argument is positive, negative or 0. 
 
 ```{R}
+# Function to check if a number is positive, negative, or zero
+check_number <- function(number) {
+  if (number > 0) {
+    print("The number is positive.")
+  } else if (number < 0) {
+    print("The number is negative.")
+  } else {
+    print("The number is zero.")
+  }
+}
 
 
 ```
@@ -40,6 +60,13 @@ The questions from your notes today are below, please copy your answers them her
    + Don't use `abs()`. Use the flow from problem 1 and multiply by negative one as necessary. 
    
 ```{r}
+# Function to return the absolute value of a number
+my_abs <- function(number) {
+  if (number < 0) {
+    number <- number * -1
+  }
+  return(number)
+}
 
 
 ```
@@ -48,13 +75,20 @@ The questions from your notes today are below, please copy your answers them her
    + There are functions that check and return T/F: `is.numeric()` or `is.character()` would be relevant here
    
 ```{r}
-
-
-
+# Function to return the absolute value with error check
+my_abs_with_check <- function(number) {
+  if (!is.numeric(number)) {
+    print("Please pass a numerical value to this function")
+  } else {
+    if (number < 0) {
+      number <- number * -1
+    }
+    return(number)
+  }
+}
 ```
    
    
-
 
 
 
